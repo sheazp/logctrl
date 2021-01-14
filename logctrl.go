@@ -98,6 +98,7 @@ func (this *LogCtrl)LogInit(FileName string,StdOut bool){
 			this.LogName = FileName[n+1:s]
 		}
 	}
+	this.resetLogWriter()
 	fmt.Println("LogFile: ", this.FileName)
 	fmt.Println("LogDir: ", this.Directory)
 	fmt.Println("LogMeth: ", this.CompressMethod)
