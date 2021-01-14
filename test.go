@@ -24,39 +24,6 @@ func GetExePath() string{
 	return root
 }
 
-func GetFileModTime(path string) int64 {
-	f, err := os.Open(path)
-	if err != nil {
-		log.Println("open file error")
-		return time.Now().Unix()
-	}
-	defer f.Close()
-
-	fi, err := f.Stat()
-	if err != nil {
-		log.Println("stat fileinfo error")
-		return time.Now().Unix()
-	}
-
-	return fi.ModTime().Unix()
-}
-
-/* 
-func main() {
-	fileArray := []string{}
-	pwd := "."//os.Getwd()
-	//获取当前目录下的所有文件或目录信息
-	filepath.Walk(pwd,func(path string, info os.FileInfo, err error) error{
-		//fmt.Println(path) //打印path信息
-		fmt.Println(info.Name()) //打印文件或目录名
-		fileArray = append(fileArray, info.Name())
-		return nil
-	})
-	for _,f := range fileArray {
-		fmt.Println(f)
-	}
-}
-*/
 func main() {
 
 	logFile := GetExePath()+ "/log/service.log"
