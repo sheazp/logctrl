@@ -78,7 +78,7 @@ func (this *LogCtrl)LogInit(FileName string,StdOut bool){
 	this.StdOut = StdOut
 	this.FileName = FileName
 	this.CompressMethod = "zip"   // 默认zip格式
-	this.TrigerSize = 10*1024*1024 // 默认10MB进行压缩
+	this.TrigerSize = 20*1024*1024 // 默认10MB进行压缩
 	this.AllZipMaxSize = 100*1024*1024 // 默认压缩大小超过100MB，删除最前的日志
 	this.ZipMaxCount = 30  // 默认压缩包个数最大20
 	n := strings.LastIndexByte(FileName, '/')
