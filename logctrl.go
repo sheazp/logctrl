@@ -149,6 +149,13 @@ func (this *LogCtrl)SetClearSize(s int64 /*字节*/){
 	this.AllZipMaxSize = s
 	log.Println("[Logctrl] Logctrl AllZipMaxSize = ", this.AllZipMaxSize)
 }
+func (this *LogCtrl)SetZipMaxCount(count int64 ){
+	if count < 30 {
+		return 
+	}
+	this.ZipMaxCount = count
+	log.Println("[Logctrl] Logctrl ZipMaxCount = ", this.ZipMaxCount)
+}
 
 func getFileModTime(path string) int64 {
 	fi, err := os.Stat(path)
