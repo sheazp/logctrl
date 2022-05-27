@@ -183,7 +183,9 @@ func (this *LogCtrl) doclear(){
 		if err == nil {
 			//fmt.Println(path) //打印path信息
 			//fmt.Println(info.Name()) //打印文件或目录名
-			fileArray = append(fileArray, info.Name())
+			if fileArray != nil {
+				fileArray = append(fileArray, info.Name())
+			}
 		}
 		return nil
 	})
